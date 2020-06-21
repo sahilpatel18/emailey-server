@@ -3,9 +3,11 @@ const app = express();
 
 app.get("/", (req, res) => {
   res.send({
-    hello: "there"
+    hello: "there",
+    more: 'json data blah blah'
   });
 });
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
+
