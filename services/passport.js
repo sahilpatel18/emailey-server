@@ -6,15 +6,14 @@ const keys = require("../config/keys");
 const User = mongoose.model("users");
 
 passport.serializeUser((user, done) => {
-  done(null, user.id)
-})
+  done(null, user.id);
+});
 
 passport.deserializeUser((id, done) => {
-  User.findById(id)
-  .then((user) => {
+  User.findById(id).then((user) => {
     done(null, user);
-  })
-})
+  });
+});
 
 //specifically telling passport to use googleoauth stategy
 passport.use(
@@ -22,7 +21,9 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: "http://localhost:5000/auth/google/callback",
+      callbackURL:
+        "https://intense-fjord-06567.herokuapp.com/auth/google/callback",
+      proxy: true,
     },
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ googleId: profile.id }).then((existingUser) => {
@@ -31,10 +32,9 @@ passport.use(
         } else {
           new User({ googleId: profile.id })
             .save()
-            .then((user) => done(null, user)); 
+            .then((user) => done(null, user));
         }
       });
     }
   )
 );
-
