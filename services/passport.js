@@ -21,7 +21,7 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: "/auth/google/callback",
+      callbackURL: "https://intense-fjord-06567.herokuapp.com//auth/google/callback",
       proxy: true,
     },
     (accessToken, refreshToken, profile, done) => {
@@ -37,3 +37,4 @@ passport.use(
     }
   )
 );
+
