@@ -31,7 +31,7 @@ class SurveyForm extends Component {
     return (
       <div>
         <form
-          onSubmit={this.props.handleSubmit((values) => console.log(values))}
+          onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}
         >
           {this.renderFields()}
           <Link
@@ -57,14 +57,14 @@ class SurveyForm extends Component {
 
 const validate = (values) => {
   const errors = {};
-  errors.emails = validEmails(values.emails || '');
-  
+  errors.emails = validEmails(values.emails || "");
+
   FIELDS.forEach(({ name, label, required }) => {
     if (required && !values[name]) {
       errors[name] = `You must provide ${label}`;
     }
   });
-  
+
   return errors;
 };
 
