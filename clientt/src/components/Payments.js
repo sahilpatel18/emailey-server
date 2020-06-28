@@ -17,6 +17,7 @@ class Payments extends Component {
       </StripeCheckout>
     );
   }
+  
 }
 
 export default connect(null, actions)(Payments);

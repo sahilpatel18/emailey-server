@@ -6,4 +6,5 @@ const recipientSchema = new Schema({
   responded: { type: Boolean, default: false },
 });
 
+
 module.exports = recipientSchema;

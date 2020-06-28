@@ -12,13 +12,11 @@ const { compact } = require("lodash");
 
 module.exports = (app) => {
   app.get("/api/surveys", requireLogin, async (req, res) => {
-   const surveys = await Survey.find({ _user: req.user.id })
-   .select({
-     recipients: false
-   })
-  
-   res.send(surveys);
+    const surveys = await Survey.find({ _user: req.user.id }).select({
+      recipients: false,
+    });
 
+    res.send(surveys);
   });
 
   app.get("/api/surveys/:surveyId/:choice", (req, res) => {
@@ -83,4 +81,5 @@ module.exports = (app) => {
       res.status(422).send(err);
     }
   });
+  
 };

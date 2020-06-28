@@ -4,4 +4,5 @@ export default [
     { label: "Subject Line", name: "subject", required: true },
     { label: "Email Body", name: "body", required: true },
     { label: "Recipient List", name: "recipients", required: true },
+    
   ];

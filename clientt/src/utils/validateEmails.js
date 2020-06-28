@@ -9,4 +9,5 @@ export default (emails) => {
     return `Your entry is invalid:  ${invalidEmails}`;
   }
   return;
+  
 };

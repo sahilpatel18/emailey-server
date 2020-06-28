@@ -27,6 +27,7 @@ class SurveyNew extends React.Component {
   }
 }
 
+
 export default reduxForm({
   form: "surveyForm,,",
 })(SurveyNew);

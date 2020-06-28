@@ -14,18 +14,17 @@ class App extends React.Component {
 
   render() {
     return (
-    
-        <BrowserRouter>
-          <div className='container'>
-           <Header />
-            <Route exact path='/' component={Landing} />
-            <Route exact path='/surveys' component={Dashboard} />
-            <Route path='/surveys/new' component={SurveyNew} />
-          </div>
-        </BrowserRouter>
-   
+      <BrowserRouter>
+        <div className='container'>
+          <Header />
+          <Route exact path='/' component={Landing} />
+          <Route exact path='/surveys' component={Dashboard} />
+          <Route path='/surveys/new' component={SurveyNew} />
+        </div>
+      </BrowserRouter>
     );
   }
 }
+
 
 export default connect(null, actions)(App);
