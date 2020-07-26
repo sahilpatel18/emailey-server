@@ -25,5 +25,6 @@
     "path-parser": "^6.1.0",
     "sendgrid": "^5.2.3",
     "stripe": "^8.67.0"
-  }
+  },
+  "devDependencies": {}
 }
